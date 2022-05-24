@@ -1,0 +1,6 @@
+[workspace]
+
+members = [
+    "lambda_tk",
+    "lambda_tk_macro"
+]
