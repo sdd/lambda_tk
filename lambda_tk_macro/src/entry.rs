@@ -60,9 +60,6 @@ fn parse_knobs(input: syn::ItemFn, _is_test: bool, _config: FinalConfig) -> Toke
 
     let new_main = quote! {
         async fn main() -> anyhow::Result<(), lambda_http::lambda_runtime::Error> {
-            // Redirect all `log`'s events to our subscriber
-            tracing_log::LogTracer::init().expect("Failed to create LogTracer");
-            
             if atty::is(atty::Stream::Stdout) {
                 // Running in a TTY: give the log output a glow-up
                 tracing_subscriber::fmt()
