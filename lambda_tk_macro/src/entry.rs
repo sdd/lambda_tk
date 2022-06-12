@@ -67,7 +67,6 @@ fn parse_knobs(input: syn::ItemFn, _is_test: bool, _config: FinalConfig) -> Toke
                     .without_time()
                     .with_env_filter(tracing_subscriber::EnvFilter::from_default_env()
                         .add_directive(tracing_subscriber::filter::LevelFilter::WARN.into())
-                        .add_directive("bootstrap=INFO".parse()?)
                     )
                     .init();
             } else {
@@ -77,7 +76,6 @@ fn parse_knobs(input: syn::ItemFn, _is_test: bool, _config: FinalConfig) -> Toke
                     .without_time()
                     .with_env_filter(tracing_subscriber::EnvFilter::from_default_env()
                         .add_directive(tracing_subscriber::filter::LevelFilter::WARN.into())
-                        .add_directive("bootstrap=INFO".parse()?)
                     )
                     .init();
             }
